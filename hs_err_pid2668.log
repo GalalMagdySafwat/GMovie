@@ -1,0 +1,113 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:273), pid=2668, tid=0x00000000000009dc
+#
+# JRE version: OpenJDK Runtime Environment (8.0_152-b01) (build 1.8.0_152-release-915-b01)
+# Java VM: OpenJDK 64-Bit Server VM (25.152-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000005672e800):  JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=2524, stack(0x0000000058380000,0x0000000058480000)]
+
+Stack: [0x0000000058380000,0x0000000058480000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:  36733 4718   !   4       com.sun.beans.TypeResolver::resolve (274 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000005a6ed000 JavaThread "Memory manager" [_thread_blocked, id=7732, stack(0x000000005ed70000,0x000000005ee70000)]
+  0x000000005a6ec000 JavaThread "build operations Thread 8" [_thread_blocked, id=8260, stack(0x000000005eec0000,0x000000005efc0000)]
+  0x000000005a6eb800 JavaThread "build operations Thread 7" [_thread_blocked, id=8704, stack(0x000000005eb20000,0x000000005ec20000)]
+  0x000000005a6ea800 JavaThread "build operations Thread 6" [_thread_blocked, id=5624, stack(0x000000005ec60000,0x000000005ed60000)]
+  0x000000005a6ea000 JavaThread "build operations Thread 5" [_thread_blocked, id=4808, stack(0x000000005e9c0000,0x000000005eac0000)]
+  0x000000005a6e9000 JavaThread "build operations Thread 4" [_thread_blocked, id=4440, stack(0x000000005e680000,0x000000005e780000)]
+  0x000000005a6e8800 JavaThread "build operations Thread 3" [_thread_blocked, id=3372, stack(0x000000005e7b0000,0x000000005e8b0000)]
+  0x000000005a6e7800 JavaThread "build operations Thread 2" [_thread_blocked, id=7920, stack(0x000000005e4d0000,0x000000005e5d0000)]
+  0x000000005a6e7000 JavaThread "build operations" [_thread_blocked, id=9276, stack(0x000000005e3d0000,0x000000005e4d0000)]
+  0x000000005a6e4800 JavaThread "Cache worker for Artifact transforms cache (C:\Users\G\.gradle\caches\transforms-1)" [_thread_blocked, id=9172, stack(0x000000005c660000,0x000000005c760000)]
+  0x000000005a2d3800 JavaThread "Cache worker for file hash cache (C:\Users\G\AndroidStudioProjects\ud843_Soonami-starting-point\.gradle\4.1\fileHashes)" [_thread_blocked, id=8916, stack(0x000000005c320000,0x000000005c420000)]
+  0x000000005677e800 JavaThread "File lock request listener" [_thread_in_native, id=8040, stack(0x000000005bb90000,0x000000005bc90000)]
+  0x000000005677e000 JavaThread "Cache worker for file hash cache (C:\Users\G\.gradle\caches\4.1\fileHashes)" [_thread_blocked, id=10020, stack(0x000000005b760000,0x000000005b860000)]
+  0x0000000059953800 JavaThread "Stdin handler" [_thread_blocked, id=8044, stack(0x000000005c000000,0x000000005c100000)]
+  0x0000000059e47000 JavaThread "Asynchronous log dispatcher for DefaultDaemonConnection: socket connection from /127.0.0.1:2993 to /127.0.0.1:2999" [_thread_blocked, id=8076, stack(0x000000005be30000,0x000000005bf30000)]
+  0x0000000059bdb800 JavaThread "Daemon worker" [_thread_in_native, id=9184, stack(0x000000005bcf0000,0x000000005bdf0000)]
+  0x0000000059bda000 JavaThread "Cancel handler" [_thread_blocked, id=9664, stack(0x0000000058280000,0x0000000058380000)]
+  0x00000000596cb800 JavaThread "Handler for socket connection from /127.0.0.1:2993 to /127.0.0.1:2999" [_thread_in_native, id=5328, stack(0x000000005b890000,0x000000005b990000)]
+  0x000000005a09f800 JavaThread "Daemon" [_thread_blocked, id=9040, stack(0x000000005b620000,0x000000005b720000)]
+  0x0000000059595000 JavaThread "Daemon periodic checks" [_thread_blocked, id=7164, stack(0x0000000059240000,0x0000000059340000)]
+  0x0000000059590800 JavaThread "Incoming local TCP Connector on port 2993" [_thread_in_native, id=3752, stack(0x0000000058600000,0x0000000058700000)]
+  0x00000000567bb000 JavaThread "Service Thread" daemon [_thread_blocked, id=7548, stack(0x0000000058730000,0x0000000058830000)]
+  0x0000000056741000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=5784, stack(0x00000000584f0000,0x00000000585f0000)]
+=>0x000000005672e800 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=2524, stack(0x0000000058380000,0x0000000058480000)]
+  0x0000000056729800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=4828, stack(0x0000000058120000,0x0000000058220000)]
+  0x0000000056738000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=7540, stack(0x0000000057f00000,0x0000000058000000)]
+  0x0000000056737000 JavaThread "Attach Listener" daemon [_thread_blocked, id=7836, stack(0x0000000057d20000,0x0000000057e20000)]
+  0x0000000056735000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8328, stack(0x0000000057b20000,0x0000000057c20000)]
+  0x000000005567c000 JavaThread "Finalizer" daemon [_thread_blocked, id=9652, stack(0x00000000579d0000,0x0000000057ad0000)]
+  0x0000000055675000 JavaThread "Reference Handler" daemon [_thread_blocked, id=8952, stack(0x0000000057840000,0x0000000057940000)]
+  0x000000000223e800 JavaThread "main" [_thread_blocked, id=8992, stack(0x0000000002470000,0x0000000002570000)]
+
+Other Threads:
+  0x00000000566e1800 VMThread [stack: 0x0000000057730000,0x0000000057830000] [id=5468]
+  0x00000000567bd000 WatcherThread [stack: 0x0000000058900000,0x0000000058a00000] [id=5864]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 179712K, used 121767K [0x00000000eab00000, 0x00000000f8500000, 0x0000000100000000)
+  eden space 166400K, 73% used [0x00000000eab00000,0x00000000f21e9fe8,0x00000000f4d80000)
+  from space 13312K, 0% used [0x00000000f5a00000,0x00000000f5a00000,0x00000000f6700000)
+  to   space 12800K, 0% used [0x00000000f4d80000,0x00000000f4d80000,0x00000000f5a00000)
+ ParOldGen       total 88064K, used 18474K [0x00000000c0000000, 0x00000000c5600000, 0x00000000eab00000)
+  object space 88064K, 20% used [0x00000000c0000000,0x00000000c120a980,0x00000000c5600000)
+ Metaspace       used 42806K, capacity 43778K, committed 44160K, reserved 1087488K
+  class space    used 5771K, capacity 6155K, committed 6272K, reserved 1048576K
+
+Card table byte_map: [0x0000000011c00000,0x0000000011e10000] byte_map_base: 0x0000000011600000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000064ba3950
+ Begin Bits: [0x0000000012a90000, 0x0000000013a90000)
+ End Bits:   [0x0000000013a90000, 0x0000000014a90000)
+
+Polling page: 0x0000000000240000
+
+CodeCache: size=245760Kb used=14562Kb max_used=14562Kb free=231197Kb
+ bounds [0x0000000002840000, 0x0000000003690000, 0x0000000011840000]
+ total_blobs=4957 nmethods=4233 adapters=636
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 36.085 Thread 0x0000000056741000 4764       3       sun.nio.fs.WindowsPath::toWindowsPath (32 bytes)
+Event: 36.085 Thread 0x0000000056741000 nmethod 4764 0x000000000367fbd0 code [0x000000000367fd60, 0x00000000036801f8]
+Event: 36.085 Thread 0x0000000056741000 4765       3       sun.nio.fs.WindowsPath::checkRead (17 bytes)
+Event: 36.085 Thread 0x0000000056741000 nmethod 4765 0x000000000367f610 code [0x000000000367f780, 0x000000000367fac8]
+Event: 36.086 Thread 0x0000000056741000 
+
+
+=
